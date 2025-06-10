@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.21)
 project(classic_win_gui VERSION 0.1.0 LANGUAGES C)
 
 # C configuration
+set(CMAKE_C_CLANG_TIDY clang-tidy -checks=-*,readability-*)
 set(CMAKE_C_STANDARD 99)
 
 # Path helper variables
@@ -15,9 +16,9 @@ get_target_property(cwgSDLLocation SDL3::SDL3 IMPORTED_LOCATION)
 # Includes
 include_directories(${cwgSrc})
 
-# Engine library configuration and sources
+# Library configuration and sources
 add_library(cwg)
-add_subdirectory(${cwg})
+add_subdirectory(${cwgSrc})
 
 # Link SDL
 target_link_directories(cwg PRIVATE ${cwgSDLLocation})

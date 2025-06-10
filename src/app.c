@@ -1,6 +1,11 @@
-#include "stdio.h"
+/**
+ * @file app.c
+ * @brief Example app that shows usage of library
+ */
+
+#include "display/display.h"
 
 int main(int argc, char **argv) {
-    printf("Hello world!");
+    cwgCreateWindow();
     return 0;
 }
