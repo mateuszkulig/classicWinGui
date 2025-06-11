@@ -1,20 +1,18 @@
 /**
  * @file backend.c
- * @brief Implementation of backend wrappers
+ * @brief Backend wrapper structure.
  */
 
 #include "backend/backend.h"
-#include "stdio.h"
+#include "backend/sdl3/sdl3_wrappers.h"
 
-cwgError sdlCreateWindow() {
-    printf("Window created!");
-    return cwgOK;
-}
 
 cwgBackendApi cwgGetBackend() {
     static const cwgBackendApi api = {
         .features = {.createWindow = true},
-        .createWindow = sdlCreateWindow
+        .initialize = sdlInit,
+        .createWindow = sdlCreateWindow,
+        .update = sdlUpdate
     };
 
     return api;

@@ -22,8 +22,10 @@ typedef struct {
  * 
  */
 typedef struct {
-    const cwgBackendFeatures features;  // Feature structure.
-    cwgError (*createWindow)();         // Create a window.
+    const cwgBackendFeatures    features;           // Feature structure.
+    cwgError                    (*initialize)();    // Intitialize backend.
+    cwgError                    (*createWindow)();  // Create a window.
+    cwgError                    (*update)();        // React to actions and redraw.
 } cwgBackendApi;
 
 /**

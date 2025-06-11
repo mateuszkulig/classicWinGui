@@ -11,7 +11,9 @@
  * 
  */
 typedef enum {
-    cwgOK = 0
+    cwgOK = 0,
+    cwgBackendInitError = 1,
+    cwgBackendWindowError = 2
 } cwgError;
 
 #endif  // ERROR_H

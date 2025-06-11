@@ -5,7 +5,16 @@
 
 #include "backend/backend.h"
 
-void cwgCreateWindow() {
+
+cwgError cwgCreateWindow() {
     const cwgBackendApi backend = cwgGetBackend();
-    cwgError result = backend.createWindow();
+
+    return backend.createWindow();
+}
+
+
+cwgError cwgUpdate() {
+    const cwgBackendApi backend = cwgGetBackend();
+
+    return backend.update();
 }

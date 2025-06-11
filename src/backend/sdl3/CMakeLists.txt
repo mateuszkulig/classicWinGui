@@ -1,3 +1,6 @@
 # src/backend/sdl3
 
-target_sources(cwg PRIVATE backend.c)
+target_sources(cwg PRIVATE
+    backend.c
+    sdl3_wrappers.c
+)
